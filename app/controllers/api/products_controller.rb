@@ -8,5 +8,7 @@ class Api::ProductsController < ApplicationController
     @products = Product.all
     render 'all.json.jb'
   end
-
+  def any_product_method
+    render 'any_product.json.jb'
+  end
 end
