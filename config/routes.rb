@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     # get "/product/:name" => 'products#find_by'
   #   get "/photos" => "photos#index"
     get '/products' => 'products#index'
+    get '/products/:id' => 'products#show'
   end
 end
