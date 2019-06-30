@@ -41,6 +41,7 @@ class Api::ProductsController < ApplicationController
 
   def update
     product_id = params[:id]
+    #@product = Product.update() works as well and dont need .save if you use this one
     @product = Product.find_by(id: product_id)
     @product.name = params[:input_name]
     @product.image_url = params[:input_image_url]
@@ -48,5 +49,12 @@ class Api::ProductsController < ApplicationController
     @product.price = params[:input_price]
     @product.save
     render 'update.json.jb'
+  end
+
+  def destroy
+    product_id = params[:id]
+    product = Product.find_by(id: product_id)
+    product.destroy
+    render 'destroy.json.jb'
   end
 end
