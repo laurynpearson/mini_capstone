@@ -1,1 +1,4 @@
-{message: "product destroyed"}
+{
+  name: @product.name,
+  id: @product.id
+}
