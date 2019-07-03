@@ -1,12 +1,12 @@
-@products.map do |index|
+@products.map do |product|
   { 
-    id: index.id,
-    name: index.name,
-    image_url: index.image_url,
-    description: index.description,
-    price: index.price,
-    discount: index.is_discounted?,
-    tax: index.tax,
-    total: index.total
+    id: product.id,
+    name: product.name,
+    image_url: product.image_url,
+    description: product.description,
+    price: product.price,
+    discount: product.is_discounted?,
+    tax: product.tax,
+    total: product.total
   }
 end

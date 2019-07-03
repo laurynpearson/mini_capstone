@@ -3,5 +3,8 @@
   image_url: @products.image_url,
   description: @products.description,
   price: @products.price,
-  id: @products.id
+  id: @products.id,
+  discount: @products.is_discounted?,
+  tax: @products.tax,
+  total: @products.total
 }
