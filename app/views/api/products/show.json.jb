@@ -6,5 +6,6 @@
   id: @products.id,
   discount: @products.is_discounted?,
   tax: @products.tax,
-  total: @products.total
+  total: @products.total,
+  in_stock: @products.in_stock
 }

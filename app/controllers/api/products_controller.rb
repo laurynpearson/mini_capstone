@@ -32,7 +32,8 @@ class Api::ProductsController < ApplicationController
         name: params[:name],
         image_url: params[:image_url],
         description: params[:description],
-        price: params[:price]
+        price: params[:price],
+        in_stock: params[:in_stock]
       }
       )
     @product.save
@@ -47,6 +48,7 @@ class Api::ProductsController < ApplicationController
     @product.image_url = params[:image_url]
     @product.description = params[:description]
     @product.price = params[:price]
+    @product.in_stock = params[:in_stock]
     @product.save
     render 'update.json.jb'
   end
