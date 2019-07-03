@@ -29,10 +29,10 @@ class Api::ProductsController < ApplicationController
   def create
     @product = Product.new(
       {
-        name: params[:input_name],
-        image_url: params[:input_image_url],
-        description: params[:input_description],
-        price: params[:input_price]
+        name: params[:name],
+        image_url: params[:image_url],
+        description: params[:description],
+        price: params[:price]
       }
       )
     @product.save
@@ -43,10 +43,10 @@ class Api::ProductsController < ApplicationController
     product_id = params[:id]
     #@product = Product.update() works as well and dont need .save if you use this one
     @product = Product.find_by(id: product_id)
-    @product.name = params[:input_name]
-    @product.image_url = params[:input_image_url]
-    @product.description = params[:input_description]
-    @product.price = params[:input_price]
+    @product.name = params[:name]
+    @product.image_url = params[:image_url]
+    @product.description = params[:description]
+    @product.price = params[:price]
     @product.save
     render 'update.json.jb'
   end

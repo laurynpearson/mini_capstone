@@ -4,6 +4,9 @@
     name: index.name,
     image_url: index.image_url,
     description: index.description,
-    price: index.price
+    price: index.price,
+    discount: index.is_discounted?,
+    tax: index.tax,
+    total: index.total
   }
 end
