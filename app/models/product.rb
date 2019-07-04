@@ -16,4 +16,17 @@ class Product < ApplicationRecord
   def total
     price + @tax_price
   end
+
+  validates :name, presence: true
+  
+  validates :price, presence: true
+
+  validates :description, presence: true
+
+  validates :name, uniqueness: true
+
+  validates :description, length: {in: 10..500}
+
+  validates :price, numericality: {only_integer: true}
+
 end

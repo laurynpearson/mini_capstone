@@ -1,21 +1,4 @@
 class Api::ProductsController < ApplicationController
-  # def all_available_products
-  #   @product = Product.first
-  #   render 'available_products.json.jb'
-  # end
-
-  # def find_by
-  #   product_name = params["name"]
-  #   @product = Product.find_by(name: product_name)
-  #   p @product
-  #   render 'available_products.json.jb'
-  # end
-
-  # def all_products
-  #   @products = Product.all
-  #   render 'all.json.jb'
-  # end
-
   def index
     @products = Product.all
     render 'index.json.jb'
@@ -36,8 +19,11 @@ class Api::ProductsController < ApplicationController
         in_stock: params[:in_stock]
       }
       )
-    @product.save
-    render 'create.json.jb'
+    if @product.save
+      render 'create.json.jb'
+    else
+      render 'errors.json.jb'
+    end
   end
 
   def update
@@ -49,8 +35,12 @@ class Api::ProductsController < ApplicationController
     @product.description = params[:description]
     @product.price = params[:price]
     @product.in_stock = params[:in_stock]
-    @product.save
-    render 'update.json.jb'
+
+    if @product.save
+      render 'show.json.jb'
+    else
+      render 'errors.json.jb'
+  end
   end
 
   def destroy
