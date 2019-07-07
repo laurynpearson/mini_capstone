@@ -1,8 +1,10 @@
 class Api::ProductsController < ApplicationController
   def index
-   
-    @products = Product.all.order(price: :desc)
-    
+    if params[:sort]
+      @products = Product.all.order(price: :asc)
+    else
+      @products = Product.all
+    end
     render 'index.json.jb'
   end
 
