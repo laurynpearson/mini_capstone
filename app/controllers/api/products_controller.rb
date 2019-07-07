@@ -1,15 +1,13 @@
 class Api::ProductsController < ApplicationController
   def index
-    if params[:search]
-      @products = Product.where("name LIKE ?", "%#{params[:search]}%")
-    else
-      @products = Product.all
-    end
+   
+    @products = Product.all.order(price: :desc)
+    
     render 'index.json.jb'
   end
 
   def show
-    product_search = params[:search]
+    product_search = params[:id]
     @products = Product.find_by(id: product_id)
     render 'show.json.jb'
   end
@@ -45,7 +43,7 @@ class Api::ProductsController < ApplicationController
       render 'show.json.jb'
     else
       render 'errors.json.jb'
-  end
+    end
   end
 
   def destroy
