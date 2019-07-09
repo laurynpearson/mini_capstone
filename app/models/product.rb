@@ -17,16 +17,16 @@ class Product < ApplicationRecord
     price + @tax_price
   end
 
-  validates :name, presence: true
+  # validates :name, presence: true
   
-  validates :price, presence: true
+  # validates :price, presence: true
 
-  validates :description, presence: true
+  # validates :description, presence: true
 
-  validates :name, uniqueness: true
+  # validates :name, uniqueness: true
 
-  validates :description, length: {in: 10..500}
+  # validates :description, length: {in: 10..500}
 
-  validates :price, numericality: {only_integer: true}
+  # validates :price, numericality: {only_integer: true}
 
 end
