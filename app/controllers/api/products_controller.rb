@@ -31,7 +31,7 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       {
         name: params[:name],
-        image_url: params[:image_url],
+        # image_url: params[:image_url],
         description: params[:description],
         price: params[:price],
         in_stock: params[:in_stock]
@@ -49,7 +49,7 @@ class Api::ProductsController < ApplicationController
     #@product = Product.update() works as well and dont need .save if you use this one
     @product = Product.find_by(id: product_id)
     @product.name = params[:name]
-    @product.image_url = params[:image_url]
+    # @product.image_url = params[:image_url]
     @product.description = params[:description]
     @product.price = params[:price]
     @product.in_stock = params[:in_stock]

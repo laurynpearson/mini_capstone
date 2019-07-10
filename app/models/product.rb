@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  has_many :images
+  belongs_to :supplier
+
   def is_discounted?
     if price < 2
       return true
@@ -20,6 +23,7 @@ class Product < ApplicationRecord
   def supplier
     Supplier.find_by(id: supplier_id)
   end
+
 
   # validates :name, presence: true
   
