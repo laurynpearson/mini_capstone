@@ -12,4 +12,7 @@ class Api::UsersController < ApplicationController
       render json: {message: user.errors.full_messages}, status: :bad_request
     end
   end
+  def show
+    render json: {user: current_user}
+  end
 end

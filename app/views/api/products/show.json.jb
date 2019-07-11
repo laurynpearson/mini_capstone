@@ -1,11 +1,11 @@
 {
   name: @products.name,
-  image_url: @products.image_url,
   description: @products.description,
   price: @products.price,
   id: @products.id,
   discount: @products.is_discounted?,
   tax: @products.tax,
   total: @products.total,
-  in_stock: @products.in_stock
+  in_stock: @products.in_stock,
+  user: current_user
 }
