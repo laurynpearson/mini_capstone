@@ -7,5 +7,6 @@
   tax: @products.tax,
   total: @products.total,
   in_stock: @products.in_stock,
+  images_url: @products.images,
   user: current_user
 }

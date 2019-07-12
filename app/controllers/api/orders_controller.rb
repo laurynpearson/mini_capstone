@@ -4,10 +4,11 @@ class Api::OrdersController < ApplicationController
     p current_user
     if current_user
       @orders = current_user.orders
+      render 'index.json.jb'
     else
-      @orders = []
+      render json: [], status: :unauthorized
     end
-    render 'index.json.jb'
+    
   end
   def create
     p "*" * 50
