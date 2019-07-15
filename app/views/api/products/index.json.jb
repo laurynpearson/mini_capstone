@@ -9,6 +9,7 @@
     total: product.total,
     in_stock: product.in_stock,
     supplier_info: product.supplier,
-    images_url: product.images
+    images_url: product.images,
+    categories: product.categories
   }
 end
