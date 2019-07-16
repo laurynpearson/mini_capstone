@@ -19,7 +19,8 @@ class Api::ProductsController < ApplicationController
     end
     # if params[:category]
     #   category = Category.find_by(name: params[:category])
-    #   @products = product.categories
+    #   @products = category.products
+    # end
     render 'index.json.jb'
 
   end
