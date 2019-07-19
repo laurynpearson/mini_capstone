@@ -24,4 +24,19 @@ class ProductsController < ApplicationController
     @product.save
     redirect_to "/products/#{@product.id}"
   end
+
+  def edit
+    @product = Product.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.update(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description]
+      )
+    redirect_to "/products/#{@product.id}"
+  end
 end
