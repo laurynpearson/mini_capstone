@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def new
     @suppliers = Supplier.all
+    @users = User.all
     render 'new.html.erb'
   end
 
