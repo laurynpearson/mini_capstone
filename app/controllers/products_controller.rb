@@ -22,6 +22,6 @@ class ProductsController < ApplicationController
       description: params[:description]
       )
     @product.save
-    render 'show.html.erb'
+    redirect_to "/products/#{@product.id}"
   end
 end
