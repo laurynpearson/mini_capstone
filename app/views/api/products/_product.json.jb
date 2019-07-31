@@ -1,5 +1,6 @@
 {
   id: product.id,
   name: product.name,
-  user: current_user
+  user: current_user,
+  image_url: product.images_url
 }

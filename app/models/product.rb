@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   has_many :images
   has_many :orders
-  belongs_to :supplier
+  # belongs_to :supplier
 
   def is_discounted?
     if price < 2
@@ -28,7 +28,13 @@ class Product < ApplicationRecord
     Supplier.find_by(id: supplier_id)
   end
 
-
+  def image_url
+    if images.length > 0
+      return images[0].url
+    else
+      return "https://www.hutchinsontires.com/helpers/img/no_image.jpg"
+    end
+  end
   # validates :name, presence: true
   
   # validates :price, presence: true

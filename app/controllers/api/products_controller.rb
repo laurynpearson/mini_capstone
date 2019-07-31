@@ -33,10 +33,10 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       {
         name: params[:name],
-        # image_url: params[:image_url],
+        # images_url: params[:images_url],
         description: params[:description],
         price: params[:price],
-        in_stock: params[:in_stock]
+        # in_stock: params[:in_stock]
       }
       )
     if @product.save

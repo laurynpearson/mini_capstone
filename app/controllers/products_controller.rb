@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
       )
     @product.save
     redirect_to "/products/#{@product.id}"
+    # render 'show.html.erb'
   end
 
   def edit
@@ -38,5 +39,11 @@ class ProductsController < ApplicationController
       description: params[:description]
       )
     redirect_to "/products/#{@product.id}"
+  end
+
+  def destory
+    @product = Product.find_by(id: params[:id])
+    @product.destory
+    redirect_to '/products'
   end
 end

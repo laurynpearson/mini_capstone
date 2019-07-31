@@ -4,12 +4,12 @@
     name: product.name,
     description: product.description,
     price: product.price,
-    discount: product.is_discounted?,
-    tax: product.tax,
-    total: product.total,
-    in_stock: product.in_stock,
-    supplier_info: product.supplier,
-    images_url: product.images,
-    categories: product.categories
+    # discount: product.is_discounted?,
+    # tax: product.tax,
+    # total: product.total,
+    # in_stock: product.in_stock,
+    # supplier_info: product.supplier,
+    images_url: product.image_url,
+    # categories: product.categories
   }
 end
