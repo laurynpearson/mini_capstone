@@ -25,7 +25,7 @@ class Api::ProductsController < ApplicationController
 
   end
   def show
-    @products = Product.find_by(id: params[:id])
+    @product = Product.find_by(id: params[:id])
     render 'show.json.jb'
   end
 
@@ -51,7 +51,7 @@ class Api::ProductsController < ApplicationController
     #@product = Product.update() works as well and dont need .save if you use this one
     @product = Product.find_by(id: product_id)
     @product.name = params[:name]
-    # @product.image_url = params[:image_url]
+    # @product.images = params[:images]
     @product.description = params[:description]
     @product.price = params[:price]
     @product.in_stock = params[:in_stock]

@@ -1,12 +1,12 @@
 {
-  name: @products.name,
-  description: @products.description,
-  price: @products.price,
-  id: @products.id,
-  discount: @products.is_discounted?,
-  tax: @products.tax,
-  total: @products.total,
-  in_stock: @products.in_stock,
-  images_url: @products.images,
-  user: current_user
+  name: @product.name,
+  description: @product.description,
+  # price: @product.price,
+  id: @product.id,
+  # discount: @product.is_discounted?,
+  # tax: @product.tax,
+  # total: @product.total,
+  # in_stock: @product.in_stock,
+  images_url: @product.images,
+  # user: current_user
 }
